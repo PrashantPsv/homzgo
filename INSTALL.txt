@@ -1,0 +1,10 @@
+HOMZGO DESIGN-ONLY UPDATE
+
+Back up your existing resources/views/home/index.blade.php and replace it with the file in this archive.
+
+This update modifies only the homepage Blade view (HTML/CSS). It does not change routes, controllers, models, authentication, booking, cart, payment, database or configuration.
+
+Preserved homepage anchors: #about, #how-it-works, #app, #vision, #contact.
+
+After deployment, clear the compiled view cache: php artisan view:clear
+Test the existing homepage, service search, category links, booking and contact routes in staging before production deployment.

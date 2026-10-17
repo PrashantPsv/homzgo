@@ -1,0 +1,8 @@
+@extends('layouts.app')
+@section('title','Edit Profile | HomZgo')
+@section('content')
+<div class="mx-auto max-w-3xl px-4 py-10"><a href="{{ route('profile') }}" class="text-sm text-indigo-600">← Back to profile</a><h1 class="mt-3 text-3xl font-bold">Edit profile</h1>@if(session('error'))<div class="mt-5 rounded-xl bg-red-50 p-4 text-sm text-red-700">{{ session('error') }}</div>@endif
+<form method="POST" action="{{ route('profile.update') }}" enctype="multipart/form-data" class="mt-8 rounded-2xl border bg-white p-6 shadow-sm">@csrf
+<div class="grid gap-5 sm:grid-cols-2"><div><label class="text-sm font-semibold">First name</label><input name="first_name" value="{{ old('first_name',$user['first_name']??'') }}" class="mt-2 w-full rounded-xl border px-4 py-3"></div><div><label class="text-sm font-semibold">Last name</label><input name="last_name" value="{{ old('last_name',$user['last_name']??'') }}" class="mt-2 w-full rounded-xl border px-4 py-3"></div><div><label class="text-sm font-semibold">Email</label><input type="email" name="email" value="{{ old('email',$user['email']??'') }}" class="mt-2 w-full rounded-xl border px-4 py-3"></div><div><label class="text-sm font-semibold">Phone</label><input value="{{ $user['phone']??'' }}" disabled class="mt-2 w-full rounded-xl border bg-gray-50 px-4 py-3 text-gray-500"></div><div class="sm:col-span-2"><label class="text-sm font-semibold">Profile photo</label><input type="file" name="profile_image" accept="image/*" class="mt-2 block w-full text-sm"></div></div><div class="mt-6 flex justify-end"><button class="rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white">Save Changes</button></div>
+</form></div>
+@endsection

@@ -1,0 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+[x-cloak] {
+    display: none !important;
+}
+.service-card-img{width: 100%; height: 140px; object-fit: contain !important; padding: 16px; background: #f8f9fb;}
